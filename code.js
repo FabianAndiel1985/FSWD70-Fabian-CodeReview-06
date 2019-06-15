@@ -24,8 +24,7 @@ var place = /** @class */ (function () {
         this.city = city;
     }
     place.prototype.display = function () {
-        // document.write(` `);
-        $(".container-fluid").html("\n\t\t <div>\n\t\t      <ul>\n\t\t      \t <li> <img src=\"" + this.tesaserImg + "\"></li>\t\n\t\t      \t <li> " + this.name + " </li>\n\t\t         <li> " + this.adress + "  </li>\n\t\t         <li> " + this.zipCode + " " + this.city + "  </li>\n\t\t      </ul>\n   \t\t</div> \n\n  \t\t\t");
+        document.write("\n\t\t <div>\n\t\t      <ul>\n\t\t      \t <li> <img src=\"" + this.tesaserImg + "\"></li>\t\n\t\t      \t <li> " + this.name + " </li>\n\t\t         <li> " + this.adress + "  </li>\n\t\t         <li> " + this.zipCode + " " + this.city + "  </li>\n\t\t      </ul>\n   \t\t</div> \n  \t\t\t");
     };
     return place;
 }());
@@ -47,7 +46,7 @@ var restaurant = /** @class */ (function (_super) {
         return _this;
     }
     restaurant.prototype.display = function () {
-        $(".container-fluid").html("\n\t\t\t<div>\n\t\t      <ul>\n\t\t      \t <li> <img src=\"" + this.tesaserImg + "\"></li>\t\n\t\t      \t <li> " + this.name + " </li>\n\t\t         <li> " + this.adress + "  </li>\n\t\t         <li> " + this.zipCode + " " + this.city + "  </li>\n\t\t         <li> " + this.telephone + " </li>\n\t\t         <li> " + this.type + "</li>\n\t\t         <li> " + this.webadress + "</li>\n\t\t      </ul>\n   \t\t\t</div> \n  \t\t\t");
+        document.write("\n\t\t\t<div>\n\t\t      <ul>\n\t\t      \t <li> <img src=\"" + this.tesaserImg + "\"></li>\t\n\t\t      \t <li> " + this.name + " </li>\n\t\t         <li> " + this.adress + "  </li>\n\t\t         <li> " + this.zipCode + " " + this.city + "  </li>\n\t\t         <li> " + this.telephone + " </li>\n\t\t         <li> " + this.type + "</li>\n\t\t         <li> " + this.webadress + "</li>\n\t\t      </ul>\n   \t\t\t</div> \n  \t\t\t");
     };
     return restaurant;
 }(place));
@@ -70,7 +69,7 @@ var events = /** @class */ (function (_super) {
     }
     events.prototype.display = function () {
         // document.write(` `);
-        $(".container-fluid").html("\n\t\t <div>\n\t\t      <ul>\n\t\t      \t <li> <img src=\"" + this.tesaserImg + "\"></li>\t\n\t\t      \t <li> " + this.name + " </li>\n\t\t         <li> " + this.adress + "  </li>\n\t\t         <li> " + this.zipCode + " " + this.city + "  </li>\n\t\t         <li> " + this.eventdate + "</li>\n\t\t         <li> " + this.time + "</li>\n\t\t         <li> " + this.price + "</li>\n\t\t      </ul>\n   \t\t</div> \n\n  \t\t\t");
+        document.write("\n\t\t <div>\n\t\t      <ul>\n\t\t      \t <li> <img src=\"" + this.tesaserImg + "\"></li>\t\n\t\t      \t <li> " + this.name + " </li>\n\t\t         <li> " + this.adress + "  </li>\n\t\t         <li> " + this.zipCode + " " + this.city + "  </li>\n\t\t         <li> " + this.eventdate + "</li>\n\t\t         <li> " + this.time + "</li>\n\t\t         <li> " + this.price + "</li>\n\t\t      </ul>\n   \t\t</div> \n\n  \t\t\t");
     };
     return events;
 }(place));
@@ -84,12 +83,26 @@ var displayloc = $(".boxFKOA");
 // console.log(displayloc);
 var locations = [Karlskirche, localZoo, WaldorfAstoria, SteiererEck, Nazar, Raf];
 console.log(locations);
-checkItUp(locations);
-function checkItUp(param) {
-    for (var i = 0; i < param.length; i++) {
-        $(displayloc[i]).html("\n\t  \t" + param[i].name + "\n\t  \t" + param[i].eventdate + "\n\t\t");
+checkItUp();
+// VERSUCH 3
+function checkItUp() {
+    var _loop_1 = function (i) {
+        $(displayloc[i]).each(function () { locations[i].display(); });
+    };
+    for (var i = 0; i < 7; i++) {
+        _loop_1(i);
     }
 }
+// VERSUCH 2
+// function checkItUp(param) {
+// 	for (let i = 0; i < param.length; i++) { 
+// 	  $(displayloc[i]).html(`
+// 	  	${param[i].name}
+// 	  	${param[i].eventdate}
+// 		`)
+// 	}
+// }
+// VERSUCH 1
 // function checkItUp(param) {
 // 	for (let i = 0; i < param.length; i++) { 
 // 	  $(displayloc[i]).html(`

@@ -21,8 +21,9 @@ class place {
 			this.city = city;
 		}
 
-  	display():any {
-  		document.write(`
+  	display() {
+  		// document.write(` `);
+  		$(".container-fluid").html(`
 		 <div>
 		      <ul>
 		      	 <li> <img src="${this.tesaserImg}"></li>	
@@ -31,7 +32,8 @@ class place {
 		         <li> ${this.zipCode} ${this.city}  </li>
 		      </ul>
    		</div> 
-  			`)
+
+  			`);
   	}
 }
 
@@ -65,8 +67,8 @@ class place {
 			this.webadress = webadress;
 		}
 
-  	display():any {
-  		document.write(`
+  	display() {
+  		$(".container-fluid").html(`
 			<div>
 		      <ul>
 		      	 <li> <img src="${this.tesaserImg}"></li>	
@@ -78,7 +80,7 @@ class place {
 		         <li> ${this.webadress}</li>
 		      </ul>
    			</div> 
-  			`)
+  			`);
   	}
 		
 }
@@ -120,7 +122,7 @@ var SteiererEck = new restaurant ("img/SteiererEck.jpg","SteiererEck","Am Heumar
 			
 		display() {
   		// document.write(` `);
-  		document.write(`
+  		$(".container-fluid").html(`
 		 <div>
 		      <ul>
 		      	 <li> <img src="${this.tesaserImg}"></li>	
@@ -163,7 +165,6 @@ var locations = [Karlskirche,localZoo,WaldorfAstoria,SteiererEck,Nazar,Raf];
 
 console.log(locations);
 
-checkItUp();
 
 // VERSUCH 3
 
