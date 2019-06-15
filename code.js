@@ -84,7 +84,12 @@ var displayloc = $(".boxFKOA");
 // console.log(displayloc);
 var locations = [Karlskirche, localZoo, WaldorfAstoria, SteiererEck, Nazar, Raf];
 console.log(locations);
-// checkItUp(locations)
+checkItUp(locations);
+function checkItUp(param) {
+    for (var i = 0; i < param.length; i++) {
+        $(displayloc[i]).html("\n\t  \t" + param[i].name + "\n\t  \t" + param[i].eventdate + "\n\t\t");
+    }
+}
 // function checkItUp(param) {
 // 	for (let i = 0; i < param.length; i++) { 
 // 	  $(displayloc[i]).html(`

@@ -172,8 +172,7 @@ function checkItUp(param) {
 	for (let i = 0; i < param.length; i++) { 
 	  
 	  $(displayloc[i]).html(`
-	  	${param[i].name}
-	  	${param[i].eventdate}
+	  	${locations[i].display()}
 		`)
 	}
 }
